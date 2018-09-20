@@ -3,6 +3,7 @@
  * For licensing, see LICENSE.md.
  */
 
+
 // The editor creator to use.
 import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
 
@@ -23,53 +24,61 @@ import Link from '@ckeditor/ckeditor5-link/src/link';
 import List from '@ckeditor/ckeditor5-list/src/list';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 
-export default class ClassicEditor extends ClassicEditorBase {}
+import Video from '@ckeditor/ckeditor5-video/src/video';
+import VideoUpload from '@ckeditor/ckeditor5-video/src/videoupload';
+
+
+export default class ClassicEditor extends ClassicEditorBase {
+}
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
-	Essentials,
-	UploadAdapter,
-	Autoformat,
-	Bold,
-	Italic,
-	BlockQuote,
-	EasyImage,
-	Heading,
-	Image,
-	ImageCaption,
-	ImageStyle,
-	ImageToolbar,
-	ImageUpload,
-	Link,
-	List,
-	Paragraph
+    Essentials,
+    UploadAdapter,
+    Autoformat,
+    Bold,
+    Italic,
+    BlockQuote,
+    EasyImage,
+    Heading,
+    Image,
+    ImageCaption,
+    ImageStyle,
+    ImageToolbar,
+    ImageUpload,
+    Link,
+    List,
+    Paragraph,
+    Video,
+    VideoUpload
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
-	toolbar: {
-		items: [
-			'heading',
-			'|',
-			'bold',
-			'italic',
-			'link',
-			'bulletedList',
-			'numberedList',
-			'imageUpload',
-			'blockQuote',
-			'undo',
-			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
-		]
-	},
-	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+    toolbar: {
+        items: [
+            'heading',
+            '|',
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            'imageUpload',
+            'blockQuote',
+            'videoUpload',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+        ]
+    },
+    // This value must be kept in sync with the language defined in webpack.config.js.
+    language: 'zh-cn'
 };
